@@ -1,6 +1,6 @@
 package com.springjwt.services.auth;
 
-import com.springjwt.dto.SignupDTO;
+import com.springjwt.dto.CreateUserDTO;
 import com.springjwt.dto.UserDTO;
 import com.springjwt.entities.User;
 import com.springjwt.repositories.UserRepository;
@@ -15,7 +15,7 @@ public class AuthServiceImpl implements AuthService {
     private UserRepository userRepository;
 
     @Override
-    public UserDTO createUser(SignupDTO signupDTO) {
+    public UserDTO createUser(CreateUserDTO signupDTO) {
         User user = new User();
         user.setName(signupDTO.getName());
         user.setEmail(signupDTO.getEmail());
