@@ -6,4 +6,6 @@ import com.springjwt.dto.UserDTO;
 public interface UserService {
     UserDTO create(CreateUserDTO createUserDTO);
 
+    public UserDTO findFirstByLogin(String login);
+
 }

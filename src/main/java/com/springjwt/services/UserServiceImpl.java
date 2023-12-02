@@ -25,4 +25,10 @@ public class UserServiceImpl implements UserService {
         User entity = userRepository.save(user);
         return userConvertService.convertToDto(entity);
     }
+
+    public UserDTO findFirstByLogin(String login) {
+        User entity = userRepository.findFirstByLogin(login);
+        return userConvertService.convertToDto(entity);
+
+    }
 }

@@ -8,3 +8,5 @@ create table users (
 );
 
 create sequence s_usuario start with 1 increment by 1;
+
+insert into public.users values( 1 ,'admin','admin','admin','$2a$10$lI1zzAi8XdDV7C4x0z9kc.CiWMGX3UkAe7vhmYPqZ//kt2K6bSzB.');

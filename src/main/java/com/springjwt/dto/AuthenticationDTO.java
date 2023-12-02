@@ -1,11 +1,13 @@
 package com.springjwt.dto;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Data
 public class AuthenticationDTO {
 
-    private String email;
+    private String login;
 
     private String password;
 
