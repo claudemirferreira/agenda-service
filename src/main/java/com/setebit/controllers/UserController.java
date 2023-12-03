@@ -2,6 +2,8 @@ package com.setebit.controllers;
 
 import com.setebit.dto.CreateUserDTO;
 import com.setebit.dto.UserDTO;
+import com.setebit.dto.UserPasswordDTO;
+import com.setebit.exception.ResourceNotFoundException;
 import com.setebit.services.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +28,15 @@ public class UserController {
            return new ResponseEntity<>("User not created, come again later!", HttpStatus.BAD_REQUEST);
        }
        return new ResponseEntity<>(createdUser, HttpStatus.CREATED);
+    }
+
+    @PutMapping("/password")
+    public ResponseEntity<?> password(@RequestBody @Valid UserPasswordDTO dto) throws ResourceNotFoundException {
+        UserDTO createdUser = userService.updatePassword(dto);
+        if (createdUser == null){
+            return new ResponseEntity<>("User not created, come again later!", HttpStatus.BAD_REQUEST);
+        }
+        return new ResponseEntity<>(createdUser, HttpStatus.CREATED);
     }
 
     @GetMapping()

@@ -17,7 +17,4 @@ public class CreateUserDTO {
     @Email(message = "email invalido")
     private String email;
 
-    @NotNull(message = "o password deve ser informado")
-    private String password;
-
 }

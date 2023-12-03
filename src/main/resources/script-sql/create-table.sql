@@ -1,12 +1,11 @@
-
 create table users (
-    usu_id bigint not null,
-    usu_email varchar(100),
+    usu_id integer not null,
+    usu_email varchar(100) not null,
+    usu_login varchar(20) not null,
     usu_name varchar(100) not null,
-    usu_password varchar(200) not null,
-    primary key (usu_id)
-);
+    usu_password varchar(200),
+    primary key (usu_id));
 
-create sequence s_usuario start with 1 increment by 1;
+alter table users drop constraint UK_qfpm1fxdsr7178jkpqj6yusm5;
 
-insert into public.users values( 1 ,'admin','admin','admin','$2a$10$lI1zzAi8XdDV7C4x0z9kc.CiWMGX3UkAe7vhmYPqZ//kt2K6bSzB.');
+alter table users add constraint UK_qfpm1fxdsr7178jkpqj6yusm5 unique (usu_login);
